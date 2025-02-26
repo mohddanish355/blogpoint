@@ -14,7 +14,7 @@ export const Homepage = () => {
 
 const HomeBar = () => {
   return (
-    <div className="border flex justify-between text-lg pl-8 px-1 py-6">
+    <div className="border flex justify-between text-2xl pl-8 px-1 py-6">
     
         Echoes
       
