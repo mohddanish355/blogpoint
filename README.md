@@ -24,18 +24,19 @@ Check out the live version here: https://blogpoint-sand.vercel.app/signin
 |--------------|----------------------|
 | Frontend     | React.js             |
 | Backend      | Node.js, Express.js  |
-| Database     | Postgres   |
+| Database     | 	PostgreSQL (with pooling)   |
 | Auth         | JWT-based Login/Auth |
-| Deployment   | Cloudflare / Vercel
+| Deployment   | Cloudflare / Vercel |
+| ORM / Driver   | Sequelize / pg + Pool |
 
-
+The backend uses PostgreSQL connection pooling for efficient and scalable query management, ensuring stable performance even under high concurrency.
 
 ## 🛠️ Installation and Setup
 
 ### Prerequisites
 
 - Node.js and npm installed
-- MongoDB (local or cloud)
+- Database URL (Postgres)
 
 ### Clone the Repository
 
