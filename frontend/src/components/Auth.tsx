@@ -14,10 +14,20 @@ export const Auth = ({ type }: {type: "signup" | "signin" }) => {
     });
 
     const navigate = useNavigate();
-
+    const encoder = new TextEncoder();
+    const requestBody = JSON.stringify(postInputs);
+    const contentLength = encoder.encode(requestBody).length.toString();
     async function sendRequest () {
         try{
-            const response = await axios.post(`${BACKEND_URL}/api/v1/user/${type === "signup" ? "signup" : "signin"}` , postInputs);
+            const response = await axios.post(`${BACKEND_URL}/api/v1/user/${type === "signup" ? "signup" : "signin"}` , 
+                postInputs,
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Content-Length": contentLength
+                    }
+                }
+            );
             const jwt = response.data;
             localStorage.setItem("token", jwt)
             navigate("/blogs")
